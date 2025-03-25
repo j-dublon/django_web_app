@@ -2,8 +2,11 @@
   <head></head>
   <body>
     <h1>This is a template</h1>
-    {% for product in products %} {{product.name}} - {{product.price}} -
-    {{product.desc}} <br />
+    {% for product in products %}
+    <a href="{% url 'first_app:product_detail' product.id %}"
+      >{{product.name}} - {{product.price}} - {{product.desc}}
+    </a>
+    <br />
     {% endfor %}
   </body>
 </html>
