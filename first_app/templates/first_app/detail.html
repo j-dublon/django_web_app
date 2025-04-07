@@ -1,4 +1,7 @@
-This is the detail page
+{% extends 'first_app/base.html' %} {% block body %}
+
 <h1>{{product.name}}</h1>
 <h2>{{product.price}}</h2>
 <p>{{product.desc}}</p>
+
+{% endblock %}

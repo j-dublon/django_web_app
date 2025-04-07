@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'first_app/styles.css' %}" />
+  </head>
+  <body>
+    <nav>
+      <div class="bg-white shadow-lg">
+        <div>
+          <div class="flex justify-between items-center ml-4 gap-4 mb-6">
+            <div>
+              <a href="" class="flex gap-4 my-6">
+                <img
+                  src="{% static 'first_app/images/shopping.png' %}"
+                  class="h-8 w-8"
+                  alt="website logo"
+                />
+                <span class="text-gray-600 text-2xl">Buy & Sell Home</span>
+              </a>
+            </div>
+            <div>
+              <a href="" class="mr-6 text-gray-600 text-md">Home</a>
+              <a href="" class="mr-6 text-gray-600 text-md">Page</a>
+              <a href="" class="mr-6 text-gray-600 text-md">Other page</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    {% block body %} {% endblock %}
+  </body>
+</html>
