@@ -1,12 +1,27 @@
-<html>
-  <head></head>
-  <body>
-    <h1>This is a template</h1>
+{% extends 'first_app/base.html' %} {% block body %}
+
+<div>
+  <h1 class="text-4xl text-gray-600 text-center sm:text-5xl md:text-5xl">
+    Premium products <span class="text-green-600">non-premium prices</span>
+  </h1>
+  <div class="p-10 grid grid-cols-1 md:grid-cols-3 gap-4">
     {% for product in products %}
-    <a href="{% url 'first_app:product_detail' product.id %}"
-      >{{product.name}} - {{product.price}} - {{product.desc}}
-    </a>
-    <br />
+    <div class="text-center rounded-md shadow-lg overflow-hidden">
+      <img
+        src="{{product.image.url}}"
+        alt="{{product.name}}"
+        class="h-24 w-24 m-auto"
+      />
+      <a href="{% url 'first_app:product_detail' product.id %}"
+        ><div class="font-bold">{{product.name}}</div>
+        <div class="font-semibold text-green-600">£{{product.price}}</div>
+        <p class="text-base text-gray-700">{{product.desc}}</p>
+      </a>
+      <br />
+    </div>
+
     {% endfor %}
-  </body>
-</html>
+  </div>
+</div>
+
+{% endblock %}
