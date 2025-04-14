@@ -1,0 +1,32 @@
+{% extends 'first_app/base.html' %} {% block body %}
+
+<h1 class="text-2xl font-bold p-10">Add Product</h1>
+
+<div class="flex justify-center p-10">
+  <form
+    method="post"
+    enctype="multipart/form-data"
+    class="bg-white shadow-md p-10 flex flex-col w-1/2 gap-4"
+  >
+    {% csrf_token %}
+    <div>
+      <label class="block text-gray-700 font-bold mb-2">Add Product</label>
+      <input type="text" name="name" id="name" placeholder="Name..." />
+    </div>
+
+    <div>
+      <label class="block text-gray-700 font-bold mb-2">Price</label>
+      <input type="text" name="price" id="price" placeholder="Price..." />
+    </div>
+
+    <div>
+      <label class="block text-gray-700 font-bold mb-2">Description</label>
+      <input type="text" name="desc" id="desc" placeholder="Description..." />
+    </div>
+
+    <input type="file" accept="image/*" name="upload" id="upload" />
+    <input type="submit" name="Add product" value="Add product" />
+  </form>
+</div>
+
+{% endblock %}

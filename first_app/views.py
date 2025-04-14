@@ -18,3 +18,13 @@ def product_detail(request, id):
         "product": product
     }
     return render(request, 'first_app/detail.html', context)
+
+def addProduct(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        price = request.POST.get('price')
+        desc = request.POST.get('desc')
+        image = request.FILES['upload']
+        product = Product(name=name, price=price, desc=desc, image=image)
+        product.save()
+    return render(request, 'first_app/addProduct.html')
